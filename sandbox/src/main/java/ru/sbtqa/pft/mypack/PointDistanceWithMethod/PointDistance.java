@@ -1,5 +1,7 @@
 package ru.sbtqa.pft.mypack.PointDistanceWithMethod;
 
+import ru.sbtqa.pft.mypack.PointDistanceWithMethod.Point;
+
 public class PointDistance {
     public static void main(String[] args) {
         Point p1 = new Point(2, 3);
