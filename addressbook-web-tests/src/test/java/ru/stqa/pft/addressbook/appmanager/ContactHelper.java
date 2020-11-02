@@ -18,6 +18,10 @@ public class ContactHelper extends HelperBase{
         type(By.name("email"),contactData.getEmail());
     }
 
+    public void allertWindow() {
+        wd.switchTo().alert().accept();
+    }
+
     public void submitNewContactCreation() {
         click(By.xpath("(//input[@name='submit'])[2]"));
     }
@@ -36,5 +40,13 @@ public class ContactHelper extends HelperBase{
 
     public void submitContactModification() {
         click(By.name("update"));
+    }
+
+    public void initContactDelete() {
+        click(By.xpath("//input[@value='Delete']"));
+    }
+
+    public void returnToHomePage() {
+        click(By.linkText("home page"));
     }
 }

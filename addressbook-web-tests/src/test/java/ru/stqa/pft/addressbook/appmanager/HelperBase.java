@@ -22,6 +22,7 @@ public class HelperBase {
         wd.findElement(locator).sendKeys(name);
     }
 
+
     public boolean isElementPresent(By by) throws NoSuchElementException {
         wd.findElement(by);
         return true;
@@ -35,4 +36,5 @@ public class HelperBase {
             return false;
         }
     }
+
 }
