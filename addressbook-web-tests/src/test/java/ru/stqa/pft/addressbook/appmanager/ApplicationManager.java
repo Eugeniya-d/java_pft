@@ -34,19 +34,6 @@ public class ApplicationManager {
         wd.quit();
     }
 
-    public boolean isElementPresent(By by) throws NoSuchElementException {
-       wd.findElement(by);
-        return true;
-    }
-
-    public boolean isAlertPresent() {
-        try {
-           wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
 
     public GroupHelper getGroupHelper() {
         return groupHelper;
