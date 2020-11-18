@@ -18,11 +18,16 @@ public class ContactData {
     }
 
     public ContactData(String name, String surname, String mobilePhone, String email) {
-        this.id = Integer.MAX_VALUE;
+        this.id = 0;
         this.name = name;
         this.surname = surname;
         this.mobilePhone = mobilePhone;
         this.email = email;
+    }
+
+    public void setId(int max) {
+        this.id=id;
+
     }
 
     public int getId() {
