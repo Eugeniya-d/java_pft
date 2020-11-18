@@ -35,8 +35,8 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void selectContact() {
-        click(By.name("selected[]"));
+    public void selectContact(int index) {
+        wd.findElements(By.name("selected[]")).get(index).click();
     }
 
     public void initContactModification() {
@@ -68,13 +68,13 @@ public class ContactHelper extends HelperBase {
 
     public List<ContactData> getContactList() {
         List<ContactData> contacts = new ArrayList<>();
-        List<WebElement> elements = wd.findElements(By.className("entry"));
+        List<WebElement> elements = wd.findElements(By.name("entry"));
 
         for (WebElement element : elements) {
-            String surname = element.findElement(By.xpath("td[2]")).getText();
             String name = element.findElement(By.xpath("td[3]")).getText();
+            String surname = element.findElement(By.xpath("td[2]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));
-            ContactData contact = new ContactData(id, name, surname, null, null);
+            ContactData contact = new ContactData( id, name, surname, null, null);
             contacts.add(contact);
         }
         return contacts;

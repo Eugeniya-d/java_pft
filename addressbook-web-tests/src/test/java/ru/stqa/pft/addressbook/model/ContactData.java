@@ -16,6 +16,7 @@ public class ContactData {
         this.mobilePhone = mobilePhone;
         this.email = email;
     }
+
     public ContactData(String name, String surname, String mobilePhone, String email) {
         this.id = Integer.MAX_VALUE;
         this.name = name;
@@ -23,6 +24,7 @@ public class ContactData {
         this.mobilePhone = mobilePhone;
         this.email = email;
     }
+
     public int getId() {
         return id;
     }
@@ -44,15 +46,6 @@ public class ContactData {
     }
 
     @Override
-    public String toString() {
-        return "ContactData{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -64,6 +57,15 @@ public class ContactData {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname);
+        return Objects.hash(id, name, surname);
     }
+
+    @Override
+    public String toString() {
+        return "ContactData{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
+    }
+
 }
