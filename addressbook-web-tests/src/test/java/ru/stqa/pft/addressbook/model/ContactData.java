@@ -18,21 +18,18 @@ public class ContactData {
     }
 
     public ContactData(String name, String surname, String mobilePhone, String email) {
-        this.id = 0;
+        this.id = Integer.MAX_VALUE;
         this.name = name;
         this.surname = surname;
         this.mobilePhone = mobilePhone;
         this.email = email;
     }
 
-    public void setId(int max) {
-        this.id=id;
-
-    }
 
     public int getId() {
         return id;
     }
+
 
     public String getName() {
         return name;
@@ -51,26 +48,26 @@ public class ContactData {
     }
 
     @Override
+    public String toString() {
+        return "ContactData{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContactData that = (ContactData) o;
-        return id == that.id &&
-                Objects.equals(name, that.name) &&
+        return Objects.equals(name, that.name) &&
                 Objects.equals(surname, that.surname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname);
-    }
-
-    @Override
-    public String toString() {
-        return "ContactData{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                '}';
+        return Objects.hash(name, surname);
     }
 
 }
