@@ -28,7 +28,7 @@ public class VerifyContactTest extends TestBase {
 
         MatcherAssert.assertThat(contact.getAllPhones(), CoreMatchers.equalTo(mergePhones(contactInfoFromEditedForm)));
         MatcherAssert.assertThat(contact.getAllMails(), CoreMatchers.equalTo(mergeEmails(contactInfoFromEditedForm)));
-       // MatcherAssert.assertThat(contact.getAddress(), CoreMatchers.equalTo(contactInfoFromEditedForm));
+    MatcherAssert.assertThat(contact.getAddress(), CoreMatchers.equalTo(contactInfoFromEditedForm.getAddress()));
 
     }
 
