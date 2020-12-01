@@ -1,5 +1,7 @@
 package ru.stqa.pft.addressbook.generators;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.io.File;
@@ -16,16 +18,25 @@ public class GeneratorContactDataJson {
         File file = new File(args[1]);
 
         List<ContactData> contacts = generateContacts(count);
-        save(contacts, file);
+        saveAsJson(contacts, file);
     }
 
-    private static void save(List<ContactData> contacts, File file) throws IOException {
+    private static void saveAsJson(List<ContactData> contacts, File file) throws IOException {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String json = gson.toJson(contacts);
         Writer writer = new FileWriter(file);
-        for (ContactData contact : contacts) {
-            writer.write(String.format("%s,%s,%s,%s\n", contact.getName(), contact.getSurname(), contact.getMobilePhone(),contact.getEmail()));
-        }
+        writer.write(json);
         writer.close();
     }
+
+
+    // private static void save(List<ContactData> contacts, File file) throws IOException {
+    //    Writer writer = new FileWriter(file);
+    //    for (ContactData contact : contacts) {
+    //      writer.write(String.format("%s,%s,%s,%s\n", contact.getName(), contact.getSurname(), contact.getMobilePhone(),contact.getEmail()));
+    //   }
+    //   writer.close();
+    // }
 
     private static List<ContactData> generateContacts(int count) {
         List<ContactData> contacts = new ArrayList<>();

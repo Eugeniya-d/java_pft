@@ -1,0 +1,37 @@
+[
+  {
+    "id": 2147483647,
+    "name": "Ivan",
+    "surname": "Ivanov0",
+    "mobilePhone": "+79999999990",
+    "email": "07999999999@mail.ru"
+  },
+  {
+    "id": 2147483647,
+    "name": "Ivan",
+    "surname": "Ivanov1",
+    "mobilePhone": "+79999999991",
+    "email": "17999999999@mail.ru"
+  },
+  {
+    "id": 2147483647,
+    "name": "Ivan",
+    "surname": "Ivanov2",
+    "mobilePhone": "+79999999992",
+    "email": "27999999999@mail.ru"
+  },
+  {
+    "id": 2147483647,
+    "name": "Ivan",
+    "surname": "Ivanov3",
+    "mobilePhone": "+79999999993",
+    "email": "37999999999@mail.ru"
+  },
+  {
+    "id": 2147483647,
+    "name": "Ivan",
+    "surname": "Ivanov4",
+    "mobilePhone": "+79999999994",
+    "email": "47999999999@mail.ru"
+  }
+]
