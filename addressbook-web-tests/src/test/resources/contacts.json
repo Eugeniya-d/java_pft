@@ -26,12 +26,5 @@
     "surname": "Ivanov3",
     "mobilePhone": "+79999999993",
     "email": "37999999999@mail.ru"
-  },
-  {
-    "id": 2147483647,
-    "name": "Ivan",
-    "surname": "Ivanov4",
-    "mobilePhone": "+79999999994",
-    "email": "47999999999@mail.ru"
   }
 ]

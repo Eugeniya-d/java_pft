@@ -20,7 +20,7 @@ public class GeneratorGroupDataJson {
     }
 
     private static void saveAsJson(List<GroupData> groups, File file) throws IOException {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
         String json = gson.toJson(groups);
         Writer writer = new FileWriter(file);
         writer.write(json);
@@ -28,13 +28,6 @@ public class GeneratorGroupDataJson {
     }
 
 
-    // private static void save(List<GroupData> groups, File file) throws IOException {
-    //     Writer writer = new FileWriter(file);
-    //    for (GroupData group : groups) {
-    //       writer.write(String.format("%s,%s,%s\n", group.getName(),group.getHeader(),group.getFooter()));
-    //    }
-    //      writer.close();
-    // }
 
     private static List<GroupData> generateGroups(int count) {
         List<GroupData> groups = new ArrayList<>();
