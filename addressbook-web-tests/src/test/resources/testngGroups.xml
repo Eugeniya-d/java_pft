@@ -1,0 +1,9 @@
+<suite name="Suite1" verbose="1" >
+    <test name="Groups" >
+        <classes>
+            <class name="ru.stqa.pft.addressbook.tests.CreateGroupTest" />
+            <class name="ru.stqa.pft.addressbook.tests.ModificationGroupTest" />
+            <class name="ru.stqa.pft.addressbook.tests.DeleteGroupTest" />
+        </classes>
+    </test>
+</suite>
