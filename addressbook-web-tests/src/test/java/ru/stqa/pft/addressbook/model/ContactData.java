@@ -1,10 +1,14 @@
 package ru.stqa.pft.addressbook.model;
 
 import com.google.gson.annotations.Expose;
+import org.hibernate.annotations.ManyToAny;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+
 @Entity
 @Table(name = "addressbook")
 public class ContactData {
@@ -44,13 +48,16 @@ public class ContactData {
     private String allPhones;
     @Transient
     private String allMails;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "address_in_groups",
+            joinColumns = @JoinColumn(name = "id"),inverseJoinColumns = @JoinColumn(name = "group_id"))
+    private Set<GroupData> groups = new HashSet<>();
 
 
 
     public int getId() {
         return id;
     }
-
 
     public String getName() {
         return name;
@@ -96,6 +103,9 @@ public class ContactData {
         return allMails;
     }
 
+    public Groups getGroups() {
+        return new Groups(groups);
+    }
 
     public ContactData withId(int id) {
         this.id = id;
