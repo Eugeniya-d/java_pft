@@ -178,12 +178,17 @@ public class ContactData {
                 Objects.equals(surname, that.surname) &&
                 Objects.equals(mobilePhone, that.mobilePhone) &&
                 Objects.equals(email, that.email) &&
-                Objects.equals(email2, that.email2);
+                Objects.equals(email2, that.email2)||email2==null &&
+                Objects.equals(email3, that.email3)||email3==null &&
+                Objects.equals(homePhone, that.homePhone)||homePhone==null &&
+                Objects.equals(workPhone, that.workPhone)||workPhone==null &&
+                Objects.equals(address, that.address)||address==null;
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, mobilePhone, email, email2);
+        return Objects.hash(id, name, surname, mobilePhone, email, email2, email3, homePhone, workPhone, address);
     }
 
     @Override
