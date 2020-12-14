@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.List;
 
@@ -88,6 +88,19 @@ public class ContactHelper extends HelperBase {
         initContactDelete();
         allertWindow();
         returnToHome();
+    }
+    public void addToSelectedGroup(ContactData contact, GroupData group) {
+        selectContactById(contact.getId());
+        selectGroupById(group.getId());
+        addToGroup();
+    }
+
+    private void addToGroup() {
+        wd.findElement(By.name("add")).click();
+    }
+
+    private void selectGroupById(int id) {
+        new Select(wd.findElement(By.name("to_group"))).selectByValue(String.valueOf(id));;
     }
 
     private void selectContactById(int id) {
