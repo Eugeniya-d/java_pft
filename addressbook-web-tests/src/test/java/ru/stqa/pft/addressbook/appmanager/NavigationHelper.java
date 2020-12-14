@@ -17,4 +17,6 @@ public class NavigationHelper extends HelperBase{
     public void contactHomePage() {
        click(By.linkText("home"));
     }
+
+
 }

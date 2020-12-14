@@ -4,9 +4,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import ru.stqa.pft.addressbook.appmanager.ContactHelper;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -18,6 +20,7 @@ import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static ru.stqa.pft.addressbook.appmanager.ContactHelper.*;
 
 public class CreateContactTest extends TestBase {
 
@@ -34,6 +37,9 @@ public class CreateContactTest extends TestBase {
         List<ContactData> contacts = gson.fromJson(json, new TypeToken<List<ContactData>>(){}.getType());
         return contacts.stream().map((g)->new Object[]{g}).collect(Collectors.toList()).iterator();
     }
+
+
+
 
     @Test(dataProvider = "validContactsFromJson")
     public void testCreateContact(ContactData contact) throws Exception {

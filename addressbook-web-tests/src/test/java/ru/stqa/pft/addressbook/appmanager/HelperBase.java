@@ -36,13 +36,5 @@ public class HelperBase {
             return false;
         }
 
-        //public boolean isAlertPresent()
-        //try {
-        //  wd.switchTo().alert();
-        //   return true;
-        // } catch (NoAlertPresentException ex) {
-        //   return false;
-        // }
-
     }
 }

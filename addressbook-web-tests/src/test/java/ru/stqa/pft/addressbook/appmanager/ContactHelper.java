@@ -3,10 +3,14 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
 import java.util.List;
+
+import static org.testng.Assert.assertTrue;
 
 public class ContactHelper extends HelperBase {
 
@@ -15,7 +19,7 @@ public class ContactHelper extends HelperBase {
         super(wd);
     }
 
-    public void fillContactFields(ContactData contactData) {
+    public void fillContactFields(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.getName());
         type(By.name("lastname"), contactData.getSurname());
         type(By.name("mobile"), contactData.getMobilePhone());
@@ -25,6 +29,14 @@ public class ContactHelper extends HelperBase {
         type(By.name("home"), contactData.getHomePhone());
         type(By.name("mobile"), contactData.getMobilePhone());
         type(By.name("work"), contactData.getWorkPhone());
+     // if (creation) {
+      //   if (contactData.getGroups().size() > 0) {
+      //          assertTrue(contactData.getGroups().size() == 1);
+      //          new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups().iterator().next().getName());
+       //     } else {
+       //         Assert.assertFalse(isElementPresent(By.name("new_group")));
+        //    }
+       // }
     }
 
 
@@ -59,14 +71,14 @@ public class ContactHelper extends HelperBase {
 
     public void create(ContactData contact) {
         initNewContactPage();
-        fillContactFields(contact);
+        fillContactFields(contact,true);
         submitNewContactCreation();
         returnToHomePage();
     }
 
     public void modify(ContactData contact) {
         initContactModificationById(contact.getId());
-        fillContactFields(contact);
+        fillContactFields(contact, false);
         submitContactModification();
         returnToHome();
     }
