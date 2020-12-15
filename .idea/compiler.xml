@@ -6,6 +6,8 @@
       <module name="mantis-tests.main" target="1.8" />
       <module name="mantis-tests.mantis-tests.main" target="1.8" />
       <module name="mantis-tests.mantis-tests.test" target="1.8" />
+      <module name="mantis-tests.mantis.main" target="1.8" />
+      <module name="mantis-tests.mantis.test" target="1.8" />
       <module name="mantis-tests.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>

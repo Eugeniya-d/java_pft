@@ -22,7 +22,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/mantis-tests" />
-            <option value="$PROJECT_DIR$/mantis-tests/mantis-tests" />
+            <option value="$PROJECT_DIR$/mantis-tests/mantis" />
           </set>
         </option>
       </GradleProjectSettings>
