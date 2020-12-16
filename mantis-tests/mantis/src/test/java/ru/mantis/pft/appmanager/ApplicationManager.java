@@ -1,5 +1,6 @@
 package ru.mantis.pft.appmanager;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -26,7 +27,8 @@ public class ApplicationManager {
 
     public void init() throws IOException {
         String target = System.getProperty("target", "local");
-        properties.load(new FileReader(new File(String.format("mantis/src/test/resources/%s.properties",target))));
+        properties.load(new FileReader
+                (new File(String.format("mantis/src/test/resources/%s.properties",target))));
 
 
         if (browser.equals(BrowserType.FIREFOX)){
@@ -47,8 +49,8 @@ public class ApplicationManager {
         return new HttpSession(this);
     }
 
-    public String getProperty(String key){
-       return properties.getProperty(key);
+    public String getProperty(String key) {
+        return properties.getProperty(key);
     }
 }
 
