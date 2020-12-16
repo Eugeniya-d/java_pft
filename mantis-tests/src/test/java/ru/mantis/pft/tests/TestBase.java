@@ -1,9 +1,9 @@
-package ru.stqa.ptf.mantis.tests;
+package ru.mantis.pft.tests;
 
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import ru.stqa.pft.mantis.appmanager.ApplicationManager;
+import ru.mantis.pft.appmanager.ApplicationManager;
 
 import java.io.IOException;
 
