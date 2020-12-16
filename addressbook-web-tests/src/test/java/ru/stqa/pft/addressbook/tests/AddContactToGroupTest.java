@@ -22,15 +22,13 @@ public class AddContactToGroupTest extends TestBase {
             app.contact().create(new ContactData().withName("Eugeniya7").withSurname("Davydova")
                     .withMobilePhone("+77777777777").withEmail("ea@test.test"));
         }
-        if (app.db().groups().size() == 0) {
-            app.goTo().groupPage();
-            app.group().create(new GroupData().withName("roup").withHeader("Test").withFooter("Test"));
-        }
     }
 
 
     @Test
     public void testAddContactToGroup() throws Exception {
+        app.goTo().groupPage();
+        app.group().create(new GroupData().withName("roup").withHeader("Test").withFooter("Test"));
 
         Contacts allContacts = app.db().contacts();
         Groups allGroups = app.db().groups();
@@ -41,8 +39,6 @@ public class AddContactToGroupTest extends TestBase {
             }
         }
         GroupData selectGroup = withoutUsedGroups.iterator().next();
-
-
         List<ContactData> withoutUsedContact = new ArrayList<>();
         for (ContactData contact : allContacts) {
             if (!contact.getGroups().contains(selectGroup)) {
@@ -50,15 +46,14 @@ public class AddContactToGroupTest extends TestBase {
             }
         }
         ContactData selectContact = withoutUsedContact.iterator().next();
-
-
         app.goTo().contactHomePage();
         Contacts beforeContact = selectGroup.getContacts();
         Groups beforeGroup = selectContact.getGroups();
         app.contact().addToSelectedGroup(selectContact, selectGroup);
-
         Contacts afterContacts = app.db().group(selectGroup.getId()).getContacts();
         Groups afterGroups = app.db().contact(selectContact.getId()).getGroups();
+
+
         assertThat(afterContacts.size(), equalTo(beforeContact.size() + 1));
         assertThat(afterGroups.size(), equalTo(beforeGroup.size() + 1));
     }
