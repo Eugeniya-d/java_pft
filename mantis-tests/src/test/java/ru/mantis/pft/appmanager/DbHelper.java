@@ -10,11 +10,13 @@ import ru.mantis.pft.models.Users;
 
 import java.util.List;
 
-public class DbHelper extends HelperBase{
+public class DbHelper {
     private final SessionFactory sessionFactory;
+    private final ApplicationManager app;
 
     public DbHelper(ApplicationManager app) {
-        super(app);
+        this.app = app;
+
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure()
                 .build();

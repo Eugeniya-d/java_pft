@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.Objects;
 
 @Entity
-@Table(name = "mantis_user_table")
+@Table(name = "bugtracker")
 public class UserData {
 
     @Id
@@ -17,7 +17,8 @@ public class UserData {
     private String username;
     @Column(name = "email")
     private String email;
-
+    @Column(name = "password")
+    private String password;
     public String getPassword() {
         return password;
     }
@@ -27,8 +28,6 @@ public class UserData {
         return this;
     }
 
-    @Column(name = "password")
-    private String password;
 
     public int getId() {
         return id;
