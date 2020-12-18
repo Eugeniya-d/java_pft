@@ -11,7 +11,7 @@ import ru.mantis.pft.models.UserData;
 
 import java.util.List;
 
-import static org.hibernate.boot.registry.StandardServiceRegistryBuilder.destroy;
+import static org.hibernate.boot.registry.StandardServiceRegistryBuilder.*;
 
 public class HbConnectionTest {
     private SessionFactory sessionFactory;
@@ -35,7 +35,7 @@ public class HbConnectionTest {
     public void testHbConnection(){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List<UserData> result = session.createQuery( "from Userdata").list();
+        List<UserData> result = session.createQuery( "from UserData").list();
         session.getTransaction().commit();
         session.close();
         for ( UserData userData : result ) {

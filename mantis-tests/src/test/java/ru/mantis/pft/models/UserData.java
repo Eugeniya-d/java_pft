@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.Objects;
 
 @Entity
-@Table(name = "bugtracker")
+@Table(name = "mantis_user_table")
 public class UserData {
 
     @Id
