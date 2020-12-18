@@ -21,7 +21,7 @@ public class ApplicationManager {
     private FtpHelper ftp;
     private MailHelper mailHelper;
     private ChangePasswordHelper changePasswordHelper;
-    private DbHelper db;
+    private DbHelper dbHelper;
 
 
     public ApplicationManager(String browser) throws IOException {
@@ -69,12 +69,6 @@ public class ApplicationManager {
         }
         return changePasswordHelper;
     }
-    public DbHelper db() {
-        if (db == null) {
-            db = new DbHelper(this);
-        }
-        return db();
-    }
 
     public WebDriver getDriver() {
         if (wd==null) {
@@ -97,6 +91,12 @@ public class ApplicationManager {
         return mailHelper;
     }
 
+    public DbHelper db() {
+        if (dbHelper == null) {
+            dbHelper = new DbHelper(this);
+        }
+        return dbHelper;
+    }
 }
 
 
