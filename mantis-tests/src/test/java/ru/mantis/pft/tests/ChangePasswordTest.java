@@ -8,6 +8,7 @@ import ru.mantis.pft.models.UserData;
 import javax.mail.MessagingException;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ChangePasswordTest extends TestBase{
 
@@ -20,9 +21,7 @@ public class ChangePasswordTest extends TestBase{
     @Test
     public void testChangePassword() throws IOException, MessagingException {
         app.changePassword().login(new UserData().withUsername("administrator").withPassword("root"));
-        UserData user = app.db
-                ().users().iterator().next();
-       // UserData user = app.db().users().stream().filter((m) -> m.getId() > 1).collect(Collectors.toList()).iterator().next();
+        UserData user = app.db().users().stream().filter((m) -> m.getId() > 1).collect(Collectors.toList()).iterator().next();
         System.out.println(user);
      //  app.changePassword().start(user,email);
        // List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
