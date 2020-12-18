@@ -17,7 +17,21 @@ public class AddContactToGroupTest extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
-        if (app.db().contacts().size() == 0) {
+        Contacts allContacts = app.db().contacts();
+        Groups allGroups = app.db().groups();
+        List<GroupData> withoutUsedGroups = new ArrayList<>();
+        for (GroupData group : allGroups) {
+            if (group.getContacts().size() != allContacts.size()) {
+                withoutUsedGroups.add(group);
+            }
+        }
+
+        if (app.db().groups().size() == 0||withoutUsedGroups.size()==0) {
+        app.goTo().groupPage();
+        app.group().create(new GroupData().withName("roup").withHeader("Test").withFooter("Test"));
+        }
+
+        if (app.db().contacts().size() == 0 ) {
             app.goTo().contactHomePage();
             app.contact().create(new ContactData().withName("Eugeniya7").withSurname("Davydova")
                     .withMobilePhone("+77777777777").withEmail("ea@test.test"));
@@ -27,9 +41,6 @@ public class AddContactToGroupTest extends TestBase {
 
     @Test
     public void testAddContactToGroup() throws Exception {
-        app.goTo().groupPage();
-        app.group().create(new GroupData().withName("roup").withHeader("Test").withFooter("Test"));
-
         Contacts allContacts = app.db().contacts();
         Groups allGroups = app.db().groups();
         List<GroupData> withoutUsedGroups = new ArrayList<>();
@@ -37,7 +48,7 @@ public class AddContactToGroupTest extends TestBase {
             if (group.getContacts().size() != allContacts.size()) {
                 withoutUsedGroups.add(group);
             }
-        }
+
         GroupData selectGroup = withoutUsedGroups.iterator().next();
         List<ContactData> withoutUsedContact = new ArrayList<>();
         for (ContactData contact : allContacts) {
@@ -57,5 +68,6 @@ public class AddContactToGroupTest extends TestBase {
         assertThat(afterContacts.size(), equalTo(beforeContact.size() + 1));
         assertThat(afterGroups.size(), equalTo(beforeGroup.size() + 1));
     }
+}
 }
 
