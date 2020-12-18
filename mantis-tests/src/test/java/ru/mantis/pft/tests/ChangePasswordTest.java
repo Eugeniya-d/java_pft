@@ -1,5 +1,6 @@
 package ru.mantis.pft.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,14 +23,18 @@ public class ChangePasswordTest extends TestBase {
 
     @Test
     public void testChangePassword() throws IOException, MessagingException {
+        String password = "password";
         app.changePassword().login(new UserData().withUsername("administrator").withPassword("root"));
         UserData user = app.db().users().stream().filter((m) -> m.getId() > 1).collect(Collectors.toList()).iterator().next();
-        System.out.println(user);
+        String username = user.getUsername();
+        String email = user.getEmail();
         app.changePassword().change(user);
         List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
-        //String confirmationMail = findConfirmationLink(mailMessages, email);
-        //app.registration().finish(confirmationMail, password);
-        //assertTrue(app.newSession().login(user,password));
+        String confirmationLink = findConfirmationLink(mailMessages, email);
+        app.changePassword().finishChanges(confirmationLink, password);
+
+
+        Assert.assertTrue(app.newSession().login(username, password));
     }
 
     private String findConfirmationLink(List<MailMessage> mailMessages, String email) {

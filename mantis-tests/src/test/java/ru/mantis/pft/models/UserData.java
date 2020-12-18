@@ -63,12 +63,13 @@ public class UserData {
         UserData userData = (UserData) o;
         return id == userData.id &&
                 Objects.equals(username, userData.username) &&
-                Objects.equals(email, userData.email);
+                Objects.equals(email, userData.email) &&
+                Objects.equals(password, userData.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, email);
+        return Objects.hash(id, username, email, password);
     }
 
     @Override
@@ -77,6 +78,7 @@ public class UserData {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 

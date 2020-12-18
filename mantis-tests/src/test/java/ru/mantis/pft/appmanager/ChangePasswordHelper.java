@@ -23,9 +23,17 @@ public class ChangePasswordHelper extends HelperBase {
         click(By.cssSelector("input[value='Сбросить пароль']"));
         System.out.println(user.getId());
     }
+
+
+    public void finishChanges(String confirmationLink, String password) {
+        wd.get(confirmationLink);
+        type(By.name("password"), password);
+        type(By.name("password_confirm"), password);
+        click(By.cssSelector("input[value='Update User']"));
+    }
 }
+
 //<a href="/mantisbt-2.24.2/manage_overview_page.php">
 //<a href="/mantisbt-2.24.2/manage_user_page.php">Управление пользователями</a>
 //<a href="manage_user_edit_page.php?user_id=1">administrator</a>
 //<input type="submit" class="btn btn-primary btn-white btn-round" value="Сбросить пароль">
-//"input[value ='" + id + "']"
