@@ -19,6 +19,7 @@ public class RegistrationTest extends TestBase{
         app.mail().start();
     }
 
+
     @Test
     public void testRegistration() throws IOException, MessagingException {
         long now = System.currentTimeMillis();
@@ -26,14 +27,14 @@ public class RegistrationTest extends TestBase{
         String user = "user" + now;
         String password = String.format("user%s",now);
         app.registration().start(user,email);
-        List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
+        List<MailMessage> mailMessages = app.mail().waitForMail(1, 10000);
         String confirmationMail = findConfirmationLink(mailMessages, email);
         app.registration().finish(confirmationMail, password);
         assertTrue(app.newSession().login(user,password));
     }
 
     private String findConfirmationLink(List<MailMessage> mailMessages, String email) {
-     MailMessage mailMessage = mailMessages.stream().filter((m)-> m.to.equals(email)).findFirst().get();
+        MailMessage mailMessage = mailMessages.stream().filter((m) -> m.to.equals(email)).findFirst().get();
         VerbalExpression regex = VerbalExpression.regex().find("http://").nonSpace().oneOrMore().build();
         return regex.getText(mailMessage.text);
     }
@@ -42,4 +43,4 @@ public class RegistrationTest extends TestBase{
     public void stopMailServer() {
         app.mail().stop();
     }
-}
+   }
