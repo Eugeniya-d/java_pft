@@ -23,19 +23,19 @@ public class ChangePasswordTest extends TestBase {
 
     @Test
     public void testChangePassword() throws IOException, MessagingException {
-        String password = "password";
+        String password = "password1";
         app.changePassword().login(new UserData().withUsername("administrator").withPassword("root"));
-        UserData user = app.db().users().stream().filter((m) -> m.getId() > 1).collect(Collectors.toList()).iterator().next();
-        String username = user.getUsername();
+        UserData user = app.db().users().stream().filter((d) -> d.getId() > 1).collect(Collectors.toList()).iterator().next();
+        int id = user.getId();
         String email = user.getEmail();
-        app.changePassword().change(user);
-        List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
+        String username = user.getUsername();
+        app.changePassword().change(id);
+        List<MailMessage> mailMessages = app.mail().waitForMail(1, 10000);
         String confirmationLink = findConfirmationLink(mailMessages, email);
         app.changePassword().finishChanges(confirmationLink, password);
-
-
         Assert.assertTrue(app.newSession().login(username, password));
     }
+
 
     private String findConfirmationLink(List<MailMessage> mailMessages, String email) {
         MailMessage mailMessage = mailMessages.stream().filter((m) -> m.to.equals(email)).findFirst().get();

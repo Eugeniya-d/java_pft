@@ -16,12 +16,11 @@ public class ChangePasswordHelper extends HelperBase {
         click(By.cssSelector("input[value='Войти']"));
 
     }
-    public void change(UserData user){
+    public void change(int id){
         click(By.xpath("//a[@href='/mantisbt-2.24.2/manage_overview_page.php']"));
         click(By.xpath("//a[@href='/mantisbt-2.24.2/manage_user_page.php']"));
-        click(By.cssSelector(String.format("a[href='manage_user_edit_page.php?user_id=%s']", user.getId())));
+        click(By.cssSelector(String.format("a[href='manage_user_edit_page.php?user_id=%s']", id)));
         click(By.cssSelector("input[value='Сбросить пароль']"));
-        System.out.println(user.getId());
     }
 
 
