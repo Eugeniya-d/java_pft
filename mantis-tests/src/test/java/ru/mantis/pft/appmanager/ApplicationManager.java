@@ -22,6 +22,7 @@ public class ApplicationManager {
     private MailHelper mailHelper;
     private ChangePasswordHelper changePasswordHelper;
     private DbHelper dbHelper;
+    private SoapHelper soapHelper;
 
 
     public ApplicationManager(String browser) throws IOException {
@@ -69,7 +70,12 @@ public class ApplicationManager {
         }
         return changePasswordHelper;
     }
-
+    public SoapHelper soap() {
+        if (soapHelper == null) {
+            soapHelper = new SoapHelper(this);
+        }
+        return soapHelper;
+    }
     public WebDriver getDriver() {
         if (wd==null) {
             if (browser.equals(BrowserType.FIREFOX)){
