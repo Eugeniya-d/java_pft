@@ -5,6 +5,9 @@
       <module name="addressbook-web-tests" target="1.8" />
       <module name="addressbook-web-tests.main" target="1.8" />
       <module name="addressbook-web-tests.test" target="1.8" />
+      <module name="java_pft" target="1.8" />
+      <module name="java_pft.main" target="1.8" />
+      <module name="java_pft.test" target="1.8" />
       <module name="mantis-tests" target="1.8" />
       <module name="mantis-tests.main" target="1.8" />
       <module name="mantis-tests.mantis-tests.main" target="1.8" />
