@@ -1,4 +1,4 @@
-package model;
+package ru.stqa.bugify.model;
 
 import java.util.Objects;
 

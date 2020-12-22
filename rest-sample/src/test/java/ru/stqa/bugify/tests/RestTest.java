@@ -1,10 +1,10 @@
-package tests;
+package ru.stqa.bugify.tests;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
-import model.Issue;
+import ru.stqa.bugify.model.Issue;
 import org.apache.http.client.fluent.Executor;
 import org.apache.http.client.fluent.Request;
 import org.apache.http.message.BasicNameValuePair;
@@ -15,9 +15,10 @@ import java.util.Set;
 
 import static org.testng.Assert.assertEquals;
 
-public class RestTest {
+public class RestTest extends TestBase{
     @Test
     public void testCreateIssue() throws IOException {
+        skipIfNotFixed(300);
         Set<Issue> oldIssues = getIssues();
         Issue newIssue = new Issue().withSubject("Test").withDescription("Test Description");
         int issueId = createIssue(newIssue);
