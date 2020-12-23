@@ -23,6 +23,7 @@ public class ApplicationManager {
     private ChangePasswordHelper changePasswordHelper;
     private DbHelper dbHelper;
     private SoapHelper soapHelper;
+    private JamesHelper james;
 
 
     public ApplicationManager(String browser) throws IOException {
@@ -70,6 +71,14 @@ public class ApplicationManager {
         }
         return changePasswordHelper;
     }
+
+    public JamesHelper james() {
+        if (james == null) {
+            james = new JamesHelper(this);
+        }
+        return james;
+    }
+
     public SoapHelper soap() {
         if (soapHelper == null) {
             soapHelper = new SoapHelper(this);
