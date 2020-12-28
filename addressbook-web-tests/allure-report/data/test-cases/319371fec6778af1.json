@@ -1,0 +1,110 @@
+{
+  "uid" : "319371fec6778af1",
+  "name" : "testDeleteGroup",
+  "fullName" : "ru.stqa.pft.addressbook.tests.DeleteGroupTest.testDeleteGroup",
+  "historyId" : "f9df866b3175089ba2d1c7fd72042c53",
+  "time" : {
+    "start" : 1609178656756,
+    "stop" : 1609178657098,
+    "duration" : 342
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "ensurePreconditions",
+    "time" : {
+      "start" : 1609178656732,
+      "stop" : 1609178656754,
+      "duration" : 22
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1609178648358,
+      "stop" : 1609178653347,
+      "duration" : 4989
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1609178657104,
+      "stop" : 1609178657269,
+      "duration" : 165
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "ru.stqa.pft.addressbook.tests.DeleteGroupTest"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.stqa.pft.addressbook.tests.DeleteGroupTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "testDeleteGroup"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Suite1"
+  }, {
+    "name" : "suite",
+    "value" : "Groups"
+  }, {
+    "name" : "subSuite",
+    "value" : "ru.stqa.pft.addressbook.tests.DeleteGroupTest"
+  }, {
+    "name" : "host",
+    "value" : "CAB-WSM-0003576"
+  }, {
+    "name" : "thread",
+    "value" : "49855@CAB-WSM-0003576.Test worker(14)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "319371fec6778af1.json",
+  "parameterValues" : [ ]
+}

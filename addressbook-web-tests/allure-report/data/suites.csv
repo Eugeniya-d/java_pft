@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Dec 28 21:04:13 MSK 2020","Mon Dec 28 21:04:14 MSK 2020","1048","Suite1","Groups","ru.stqa.pft.addressbook.tests.CreateGroupTest","ru.stqa.pft.addressbook.tests.CreateGroupTest","testCreateGroup","testCreateGroup",""
+"passed","Mon Dec 28 21:04:16 MSK 2020","Mon Dec 28 21:04:17 MSK 2020","342","Suite1","Groups","ru.stqa.pft.addressbook.tests.DeleteGroupTest","ru.stqa.pft.addressbook.tests.DeleteGroupTest","testDeleteGroup","testDeleteGroup",""
+"passed","Mon Dec 28 21:04:15 MSK 2020","Mon Dec 28 21:04:15 MSK 2020","656","Suite1","Groups","ru.stqa.pft.addressbook.tests.CreateGroupTest","ru.stqa.pft.addressbook.tests.CreateGroupTest","testCreateGroup","testCreateGroup",""
+"passed","Mon Dec 28 21:04:15 MSK 2020","Mon Dec 28 21:04:16 MSK 2020","763","Suite1","Groups","ru.stqa.pft.addressbook.tests.ModificationGroupTest","ru.stqa.pft.addressbook.tests.ModificationGroupTest","testModificationGroup","testModificationGroup",""
+"passed","Mon Dec 28 21:04:14 MSK 2020","Mon Dec 28 21:04:15 MSK 2020","674","Suite1","Groups","ru.stqa.pft.addressbook.tests.CreateGroupTest","ru.stqa.pft.addressbook.tests.CreateGroupTest","testCreateGroup","testCreateGroup",""

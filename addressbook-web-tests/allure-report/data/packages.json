@@ -1,0 +1,86 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "ru.stqa.pft.addressbook.tests",
+    "children" : [ {
+      "name" : "CreateGroupTest",
+      "children" : [ {
+        "name" : "testCreateGroup",
+        "uid" : "fb7c4dbfc8ff61d1",
+        "parentUid" : "421abd6d07f9d41f2910fa9bcb273f5b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609178653477,
+          "stop" : 1609178654525,
+          "duration" : 1048
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "GroupData{id='2147483647', name='test 0'}" ]
+      }, {
+        "name" : "testCreateGroup",
+        "uid" : "2d43093ef3aa5ea6",
+        "parentUid" : "421abd6d07f9d41f2910fa9bcb273f5b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609178654590,
+          "stop" : 1609178655264,
+          "duration" : 674
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "GroupData{id='2147483647', name='test 1'}" ]
+      }, {
+        "name" : "testCreateGroup",
+        "uid" : "6b4ef273cb15e0fa",
+        "parentUid" : "421abd6d07f9d41f2910fa9bcb273f5b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609178655276,
+          "stop" : 1609178655932,
+          "duration" : 656
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "GroupData{id='2147483647', name='test 2'}" ]
+      } ],
+      "uid" : "421abd6d07f9d41f2910fa9bcb273f5b"
+    }, {
+      "name" : "ModificationGroupTest",
+      "children" : [ {
+        "name" : "testModificationGroup",
+        "uid" : "481eb8953040b8d8",
+        "parentUid" : "91db5d542a355eafb48830c407c2901a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609178655968,
+          "stop" : 1609178656731,
+          "duration" : 763
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "91db5d542a355eafb48830c407c2901a"
+    }, {
+      "name" : "DeleteGroupTest",
+      "children" : [ {
+        "name" : "testDeleteGroup",
+        "uid" : "319371fec6778af1",
+        "parentUid" : "1d0294d42ea4366e69c1153aea1dc0f4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609178656756,
+          "stop" : 1609178657098,
+          "duration" : 342
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1d0294d42ea4366e69c1153aea1dc0f4"
+    } ],
+    "uid" : "ru.stqa.pft.addressbook.tests"
+  } ]
+}

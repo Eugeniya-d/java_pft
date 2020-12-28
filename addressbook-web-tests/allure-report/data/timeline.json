@@ -1,0 +1,78 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "CAB-WSM-0003576",
+    "children" : [ {
+      "name" : "49855@CAB-WSM-0003576.Test worker(14)",
+      "children" : [ {
+        "name" : "testCreateGroup",
+        "uid" : "6b4ef273cb15e0fa",
+        "parentUid" : "a4c72ff18cea00a68ce64f4b4e4dd6d1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609178655276,
+          "stop" : 1609178655932,
+          "duration" : 656
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "GroupData{id='2147483647', name='test 2'}" ]
+      }, {
+        "name" : "testCreateGroup",
+        "uid" : "fb7c4dbfc8ff61d1",
+        "parentUid" : "a4c72ff18cea00a68ce64f4b4e4dd6d1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609178653477,
+          "stop" : 1609178654525,
+          "duration" : 1048
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "GroupData{id='2147483647', name='test 0'}" ]
+      }, {
+        "name" : "testModificationGroup",
+        "uid" : "481eb8953040b8d8",
+        "parentUid" : "a4c72ff18cea00a68ce64f4b4e4dd6d1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609178655968,
+          "stop" : 1609178656731,
+          "duration" : 763
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testDeleteGroup",
+        "uid" : "319371fec6778af1",
+        "parentUid" : "a4c72ff18cea00a68ce64f4b4e4dd6d1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609178656756,
+          "stop" : 1609178657098,
+          "duration" : 342
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "testCreateGroup",
+        "uid" : "2d43093ef3aa5ea6",
+        "parentUid" : "a4c72ff18cea00a68ce64f4b4e4dd6d1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609178654590,
+          "stop" : 1609178655264,
+          "duration" : 674
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "GroupData{id='2147483647', name='test 1'}" ]
+      } ],
+      "uid" : "a4c72ff18cea00a68ce64f4b4e4dd6d1"
+    } ],
+    "uid" : "dc505c0526cd296fb76bb056e80d38a6"
+  } ]
+}
