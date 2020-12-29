@@ -68,6 +68,21 @@ task testGroups(type: Test) {
         systemProperty 'verifyUi', "${verifyUi}"
     }
 }
+
+task cucumber(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/cucumber.xml'
+    }
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
+    if (project.hasProperty('verifyUi')) {
+        systemProperty 'verifyUi', "${verifyUi}"
+    }
+}
 task rf(type: JavaExec) {
     // Основной запускаемый класс
     main = 'org.robotframework.RobotFramework'
