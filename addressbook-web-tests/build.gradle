@@ -31,9 +31,9 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.20.Final'
     compile group: 'io.qameta.allure', name: 'allure-testng', version: '2.13.0'
+    compile group: 'org.robotframework', name: 'robotframework', version: '3.2.2'
 
 }
-
 
 
 task testContacts(type: Test) {
@@ -52,18 +52,30 @@ task testContacts(type: Test) {
 }
 
 
-    task testGroups(type: Test) {
-        useTestNG() {
-            suites 'src/test/resources/testngGroups.xml'
-        }
-        if (project.hasProperty('browser')) {
-            systemProperty 'browser', "${browser}"
-        }
-        if (project.hasProperty('target')) {
-            systemProperty 'target', "${target}"
-        }
-        if (project.hasProperty('verifyUi')) {
-            systemProperty 'verifyUi', "${verifyUi}"
-        }
+task testGroups(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/testngGroups.xml'
     }
+    if (project.hasProperty('browser')) {
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
+    if (project.hasProperty('verifyUi')) {
+        systemProperty 'verifyUi', "${verifyUi}"
+    }
+}
+task rf(type: JavaExec) {
+    // Основной запускаемый класс
+    main = 'org.robotframework.RobotFramework'
+    // Набор подключаемых классов
+    classpath = sourceSets.test.runtimeClasspath
+    // Каталог для отчетов
+    args '--outputdir', 'build/rf-report'
+    // Расположение сценария Robot Framework
+    args 'src/test/resources/rf'
+}
+
+
 
